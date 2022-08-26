@@ -13,9 +13,9 @@ public class TabuleiroComparator implements Comparator<Tabuleiro> {
             case CUSTO_UNIFORME:
                 return this.custoUniforme(o1, o2);
             case A_ESTRELA_SIMPLES:
-                return pecasIguais(o1, o2);
+                return this.pecasIguais(o1, o2);
             case A_ESTRELA_MANHATTAN:
-                return manhattan(o1, o2);
+                return this.manhattan(o1, o2);
         }
         return 0;
     }
