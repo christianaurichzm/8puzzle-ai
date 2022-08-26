@@ -7,9 +7,9 @@ public class Tabuleiro {
             {4, 5, 6},
             {7, 8, 0}
     };
-    private int[][] estado;
+    private final int[][] estado;
     private Tabuleiro pai;
-    private List<Tabuleiro> filhos;
+    private final List<Tabuleiro> filhos;
     private int xZero;
     private int yZero;
     private int custoTotal;
