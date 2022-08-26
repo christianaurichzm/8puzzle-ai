@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Busca {
-    public static boolean tabuleiraEstaNaColecao(Collection<Tabuleiro> tabuleiros, Tabuleiro filho) {
+    private static boolean tabuleiroEstaNaColecao(Collection<Tabuleiro> tabuleiros, Tabuleiro filho) {
         for (Tabuleiro tabuleiro : tabuleiros) {
             if (tabuleiro.tabuleiroEhIgual(filho.getEstado())) {
                 return true;
@@ -44,8 +44,8 @@ public class Busca {
             tabuleiroAtual.criaFilhos();
 
             for (Tabuleiro filho : tabuleiroAtual.getFilhos()) {
-                if (!tabuleiraEstaNaColecao(nodosVisitados, filho)) {
-                    if (!tabuleiraEstaNaColecao(fronteira, filho)) {
+                if (!tabuleiroEstaNaColecao(nodosVisitados, filho)) {
+                    if (!tabuleiroEstaNaColecao(fronteira, filho)) {
                         fronteira.add(filho);
                     }
                 }
