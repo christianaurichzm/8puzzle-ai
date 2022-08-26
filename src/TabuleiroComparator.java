@@ -13,22 +13,22 @@ public class TabuleiroComparator implements Comparator<Tabuleiro> {
             case CUSTO_UNIFORME:
                 return this.custoUniforme(o1, o2);
             case A_ESTRELA_SIMPLES:
-                return pecasIguais(o1, o2);
+                return this.pecasIguais(o1, o2);
             case A_ESTRELA_MANHATTAN:
-                return manhattan(o1, o2);
+                return this.manhattan(o1, o2);
         }
         return 0;
     }
 
-    public int custoUniforme(Tabuleiro o1, Tabuleiro o2) {
+    private int custoUniforme(Tabuleiro o1, Tabuleiro o2) {
         return (o1.getCustoTotal() - o2.getCustoTotal());
     }
 
-    public int pecasIguais(Tabuleiro o1, Tabuleiro o2) {
+    private int pecasIguais(Tabuleiro o1, Tabuleiro o2) {
         return (o1.getCustoTotal() + o1.quantidadePecasDiferentes()) - (o2.getCustoTotal() + o2.quantidadePecasDiferentes());
     }
 
-    public int manhattan(Tabuleiro o1, Tabuleiro o2) {
+    private int manhattan(Tabuleiro o1, Tabuleiro o2) {
         return (o1.getCustoTotal() + o1.distanciaManhattan()) - (o2.getCustoTotal() + o2.distanciaManhattan());
     }
 }

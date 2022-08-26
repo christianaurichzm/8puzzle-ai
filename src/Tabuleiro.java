@@ -7,9 +7,9 @@ public class Tabuleiro {
             {4, 5, 6},
             {7, 8, 0}
     };
-    private int[][] estado;
+    private final int[][] estado;
     private Tabuleiro pai;
-    private List<Tabuleiro> filhos;
+    private final List<Tabuleiro> filhos;
     private int xZero;
     private int yZero;
     private int custoTotal;
@@ -20,11 +20,11 @@ public class Tabuleiro {
 		this.custoTotal = 0;
     }
 
-    public int encontraLinha(int numeroDesejado, int[][] estadoBuscado) {
+    private int encontraLinha(int numeroDesejado, int[][] estadoBuscado) {
         return (numeroDesejado - 1) / estadoBuscado.length;
     }
 
-    public int encontraColuna(int numeroDesejado, int[][] estadoBuscado) {
+    private int encontraColuna(int numeroDesejado, int[][] estadoBuscado) {
         return (numeroDesejado - 1) % estadoBuscado.length;
     }
 
@@ -68,7 +68,7 @@ public class Tabuleiro {
         return distancia;
     }
 
-    public void encontraVazio() {
+    private void encontraVazio() {
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
                 if (estado[i][j] == 0) {
@@ -79,7 +79,7 @@ public class Tabuleiro {
         }
     }
 
-    public int[][] copiaMatrizAtual() {
+    private int[][] copiaMatrizAtual() {
         int[][] novaMatriz = new int[3][3];
 
         for (int i = 0; i <= 2; i++) {
